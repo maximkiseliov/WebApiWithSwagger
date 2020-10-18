@@ -1,9 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Newtonsoft.Json;
 
 namespace TechnicalTestWebApi.Models
 {
     public class Address
     {
+        [Key]
         public int AddressId { get; set; }
 
         public string Locale { get; set; }
@@ -34,7 +36,7 @@ namespace TechnicalTestWebApi.Models
 
         public override string ToString()
         {
-            return $"addressLine1: {AddressLine1}, locale: {Locale}";
+            return JsonConvert.SerializeObject(this);
         }
     }
 }

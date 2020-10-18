@@ -1,9 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Newtonsoft.Json;
 
 namespace TechnicalTestWebApi.Models
 {
     public class Organisation
     {
+        [Key]
         public int OrganisationId { get; set; }
 
         [Required]
@@ -13,5 +15,10 @@ namespace TechnicalTestWebApi.Models
 
         [Required]
         public Address Address { get; set; }
+
+        public override string ToString()
+        {
+            return JsonConvert.SerializeObject(this);
+        }
     }
 }
