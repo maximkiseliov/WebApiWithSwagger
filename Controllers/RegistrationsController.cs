@@ -4,6 +4,7 @@ using System;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
+using TechnicalTestWebApi.DB;
 using TechnicalTestWebApi.Models;
 
 namespace TechnicalTestWebApi.Controllers

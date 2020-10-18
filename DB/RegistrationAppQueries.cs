@@ -2,7 +2,7 @@
 using System.Linq;
 using TechnicalTestWebApi.Models;
 
-namespace TechnicalTestWebApi
+namespace TechnicalTestWebApi.DB
 {
     public static class RegistrationAppQueries
     {
