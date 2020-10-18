@@ -33,7 +33,6 @@ namespace TechnicalTestWebApi.Controllers
         [HttpGet("{registrationsId}")]
         public ActionResult<string> Get(Guid? registrationsId)
         {
-            var registration = _context.Registrations.Include(r => r.Person).Include(r => r.Organisation);
             return _context.Registrations.Find(registrationsId.Value).ToString();
         }
 
