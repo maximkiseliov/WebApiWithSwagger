@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System;
 using TechnicalTestWebApi.Models;
 
 namespace TechnicalTestWebApi.Controllers
@@ -34,12 +35,13 @@ namespace TechnicalTestWebApi.Controllers
         }
 
         [HttpPost]
-        public ActionResult<int> Post(Address address)
+        public ActionResult<int> Post(Registration registration)
         {
-            _context.Addresses.Add(address);
+            registration.RegistrationDate = DateTime.Now;
+            _context.Registrations.Add(registration);
             _context.SaveChanges();
 
-            return address.AddressId;
+            return registration.RegistrationId;
         }
     }
 }
