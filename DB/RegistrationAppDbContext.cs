@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TechnicalTestWebApi.Models;
 
-namespace TechnicalTestWebApi
+namespace TechnicalTestWebApi.DB
 {
     public class RegistrationAppDbContext : DbContext
     {

@@ -5,13 +5,13 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using TechnicalTestWebApi;
+using TechnicalTestWebApi.DB;
 
 namespace TechnicalTestWebApi.Migrations
 {
     [DbContext(typeof(RegistrationAppDbContext))]
-    [Migration("20201018102859_Init")]
-    partial class Init
+    [Migration("20201018134110_InitMigration")]
+    partial class InitMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
