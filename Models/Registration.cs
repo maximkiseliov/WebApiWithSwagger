@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using Newtonsoft.Json;
 
 namespace TechnicalTestWebApi.Models
 {
@@ -18,11 +17,5 @@ namespace TechnicalTestWebApi.Models
         public Person Person { get; set; }
 
         public Organisation Organisation { get; set; }
-
-
-        public override string ToString()
-        {
-            return JsonConvert.SerializeObject(this);
-        }
     }
 }

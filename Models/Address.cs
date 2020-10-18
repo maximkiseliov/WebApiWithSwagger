@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Newtonsoft.Json;
 
 namespace TechnicalTestWebApi.Models
 {
@@ -10,9 +9,7 @@ namespace TechnicalTestWebApi.Models
 
         public string Locale { get; set; }
 
-        [Required]
-        [MaxLength(150)]
-        [MinLength(1)]
+        [Required, MaxLength(150), MinLength(1)]
         public string AddressLine1 { get; set; }
 
         [MaxLength(150)]
@@ -30,13 +27,7 @@ namespace TechnicalTestWebApi.Models
         [MaxLength(60)]
         public string Postcode { get; set; }
 
-        [Required]
-        [MaxLength(60)]
+        [Required, MaxLength(60)]
         public string CountryIsoCode { get; set; }
-
-        public override string ToString()
-        {
-            return JsonConvert.SerializeObject(this);
-        }
     }
 }

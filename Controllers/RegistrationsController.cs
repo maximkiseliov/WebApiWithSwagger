@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using TechnicalTestWebApi.Models;
 
 namespace TechnicalTestWebApi.Controllers
@@ -30,10 +31,12 @@ namespace TechnicalTestWebApi.Controllers
             return "App Running...";
         }
 
+        //TODO: Registration Locale is returned as null. PersonId, OrganisationId AddressId are returned
         [HttpGet("{registrationsId}")]
         public ActionResult<string> Get(Guid? registrationsId)
         {
-            return _context.Registrations.Find(registrationsId.Value).ToString();
+            var result = RegistrationAppQueries.ByRegistrationId(registrationsId, _context);
+            return JsonConvert.SerializeObject(result);
         }
 
         [HttpPost]
