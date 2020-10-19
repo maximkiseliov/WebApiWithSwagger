@@ -32,7 +32,6 @@ namespace TechnicalTestWebApi.Controllers
             return "App Running...";
         }
 
-        //TODO: Registration Locale is returned as null. PersonId, OrganisationId AddressId are returned
         [HttpGet("{registrationsId}")]
         public ActionResult<string> Get(Guid? registrationsId)
         {

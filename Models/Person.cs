@@ -1,10 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Newtonsoft.Json;
 
 namespace TechnicalTestWebApi.Models
 {
     public class Person
     {
         [Key]
+        [JsonIgnore]
         public int PersonId { get; set; }
 
         [Required, MaxLength(150), MinLength(1)]

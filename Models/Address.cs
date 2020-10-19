@@ -1,10 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Newtonsoft.Json;
 
 namespace TechnicalTestWebApi.Models
 {
     public class Address
     {
         [Key]
+        [JsonIgnore]
         public int AddressId { get; set; }
 
         public string Locale { get; set; }
