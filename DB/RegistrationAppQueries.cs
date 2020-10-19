@@ -6,6 +6,8 @@ namespace TechnicalTestWebApi.DB
 {
     public static class RegistrationAppQueries
     {
+        //TODO: Try execute
+        //Execute sql files not using entity framework
         public static IQueryable<Registration> ByRegistrationId(Guid? registrationId, RegistrationAppDbContext context)
         {
             return from r in context.Registrations
@@ -18,6 +20,7 @@ namespace TechnicalTestWebApi.DB
                 {
                     RegistrationId = r.RegistrationId,
                     RegistrationDate = r.RegistrationDate,
+                    Locale = r.Locale,
                     Person = new Person
                     {
                         Address = pA,
