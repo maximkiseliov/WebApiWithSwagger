@@ -36,7 +36,7 @@ namespace TechnicalTestWebApi.Controllers
         public ActionResult<string> Get(Guid? registrationsId)
         {
             var result = RegistrationAppQueries.ByRegistrationId(registrationsId, _context);
-            return JsonConvert.SerializeObject(result);
+            return Ok(JsonConvert.SerializeObject(result));
         }
 
         [HttpPost]
